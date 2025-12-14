@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 0.18s ease-out;
+}
+
+.input {
+  @apply border rounded-lg px-3 py-2 w-full;
+}
+
+.card {
+  @apply bg-white rounded-xl p-4 shadow text-lg font-semibold;
+}
+
+.btn {
+  @apply bg-gray-200 rounded-lg py-2;
+}
+
+.btn-primary {
+  @apply bg-green-600 text-white px-4 py-2 rounded-lg;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white px-4 py-2 rounded-lg;
+}
