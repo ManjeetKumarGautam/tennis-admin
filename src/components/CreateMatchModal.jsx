@@ -272,44 +272,6 @@ export default function CreateMatchModal({ open, setOpen, refresh }) {
                         </div>
                     </Section>
 
-                    {/* Statistics */}
-                    <Section title="Statistics">
-                        <div className="space-y-3">
-                            {Object.keys(form.statistics).map((key) => (
-                                <div
-                                    key={key}
-                                    className="grid grid-cols-3 gap-4 items-center"
-                                >
-                                    <span className="text-sm text-gray-600 capitalize">
-                                        {key.replace(/([A-Z])/g, " $1")}
-                                    </span>
-                                    <Input
-                                        type="number"
-                                        placeholder="Player A"
-                                        onChange={(e) =>
-                                            updateStat(
-                                                key,
-                                                "playerA",
-                                                e.target.value
-                                            )
-                                        }
-                                    />
-                                    <Input
-                                        type="number"
-                                        placeholder="Player B"
-                                        onChange={(e) =>
-                                            updateStat(
-                                                key,
-                                                "playerB",
-                                                e.target.value
-                                            )
-                                        }
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </Section>
-
                     {/* Footer */}
                     <div className="flex justify-end gap-3 pt-4 border-t">
                         <button

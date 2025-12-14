@@ -161,7 +161,7 @@ export default function Matches() {
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="inline-flex gap-3">
-                                            <button
+                                            {/* <button
                                                 onClick={() => {
                                                     setSelectedMatch(match);
                                                     setModalOpen(true);
@@ -170,7 +170,7 @@ export default function Matches() {
                                                 title="Edit"
                                             >
                                                 <FiEdit />
-                                            </button>
+                                            </button> */}
                                             <button
                                                 onClick={() =>
                                                     deleteMatch(match._id)

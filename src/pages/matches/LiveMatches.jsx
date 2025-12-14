@@ -67,14 +67,6 @@ export default function LiveMatches() {
                                 {match.matchInfo.surface} • {match.matchInfo.court}
                             </div>
 
-                            {/* Stats */}
-                            <div className="grid grid-cols-2 gap-4 text-sm">
-                                <Stat label="Aces" a={match.statistics.aces.playerA} b={match.statistics.aces.playerB} />
-                                <Stat label="Winners" a={match.statistics.winners.playerA} b={match.statistics.winners.playerB} />
-                                <Stat label="Double Faults" a={match.statistics.doubleFaults.playerA} b={match.statistics.doubleFaults.playerB} />
-                                <Stat label="Unforced Errors" a={match.statistics.unforcedErrors.playerA} b={match.statistics.unforcedErrors.playerB} />
-                            </div>
-
                             {/* Footer */}
                             <div className="mt-4 text-xs text-gray-500">
                                 Umpire: {match.matchInfo.umpire}
@@ -87,12 +79,3 @@ export default function LiveMatches() {
     );
 }
 
-/* Reusable Stat Row */
-function Stat({ label, a, b }) {
-    return (
-        <div className="flex justify-between bg-gray-50 rounded-lg px-3 py-2">
-            <span className="text-gray-500">{label}</span>
-            <span className="font-medium">{a} : {b}</span>
-        </div>
-    );
-}

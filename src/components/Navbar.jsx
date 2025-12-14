@@ -44,12 +44,6 @@ export default function Navbar() {
                 {/* Dropdown */}
                 {open && (
                     <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-xl py-2 border border-gray-200 animate-dropdown">
-                        <button
-                            className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 w-full text-left text-gray-800 font-medium"
-                        >
-                            <User size={18} />
-                            View Profile
-                        </button>
 
                         <button
                             onClick={handleLogout}

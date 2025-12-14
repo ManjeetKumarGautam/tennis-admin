@@ -49,7 +49,13 @@ export default function ScoreBoard() {
                 ...prev,
                 score: updatedScore
             }));
+
+            if (updatedScore?.status === "completed") {
+                fetchMatch();
+            }
         });
+
+
 
         return () => {
             socketRef.current.disconnect();
