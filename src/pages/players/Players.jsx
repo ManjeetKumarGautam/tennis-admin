@@ -70,24 +70,18 @@ export default function PlayerManagement() {
                     className="w-80 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
                 />
 
-                <div className="flex gap-2">
 
-                    <button
-                        onClick={() => {
-                            setSelectedPlayer(null);
-                            setModalOpen(true);
-                        }}
-                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
-                    >
-                        <FiPlus /> Add Player
-                    </button>
-                    <button
-                        onClick={sortByRanking}
-                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
-                    >
-                        Sort by ranking {sortAsc ? "↑" : "↓"}
-                    </button>
-                </div>
+
+                <button
+                    onClick={() => {
+                        setSelectedPlayer(null);
+                        setModalOpen(true);
+                    }}
+                    className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
+                >
+                    <FiPlus /> Add Player
+                </button>
+
             </div>
 
             {/* Table */}
@@ -96,7 +90,7 @@ export default function PlayerManagement() {
                     <thead className="border-b border-gray-200 bg-[#1E2A4A]  text-white">
                         <tr>
                             <th className="px-6 py-3 text-left font-medium">
-                                S.No.
+                                Rank
                             </th>
                             <th className="px-6 py-3 text-left font-medium">
                                 Name
@@ -104,17 +98,14 @@ export default function PlayerManagement() {
                             <th className="px-6 py-3 text-left font-medium">
                                 Country
                             </th>
-                            <th
-                                onClick={sortByRanking}
-                                className="px-6 py-3 text-left font-medium cursor-pointer"
-                            >
-                                Ranking
-                            </th>
                             <th className="px-6 py-3 text-left font-medium">
                                 Age
                             </th>
                             <th className="px-6 py-3 text-left font-medium">
-                                W / L
+                                Wins
+                            </th>
+                            <th className="px-6 py-3 text-left font-medium">
+                                Losses
                             </th>
                             <th className="px-6 py-3 text-left font-medium">
                                 Slams
@@ -142,7 +133,7 @@ export default function PlayerManagement() {
                                     className="border-b border-gray-200 last:border-none hover:bg-gray-100 transition"
                                 >
                                     <td className="px-6 py-4 font-medium text-gray-900">
-                                        {idx + 1}
+                                        # {idx + 1}
                                     </td>
                                     <td className="px-6 py-4 font-medium text-gray-900">
                                         {player.name}
@@ -153,14 +144,15 @@ export default function PlayerManagement() {
                                             className="w-16 h-10"
                                         />
                                     </td>
-                                    <td className="px-6 py-4">
-                                        {player.ranking}
-                                    </td>
+
                                     <td className="px-6 py-4">
                                         {player.age}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {player.wins} / {player.losses}
+                                        {player.wins}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {player.losses}
                                     </td>
                                     <td className="px-6 py-4">
                                         {player.grandSlams}

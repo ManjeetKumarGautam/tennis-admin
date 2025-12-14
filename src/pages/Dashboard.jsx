@@ -208,14 +208,14 @@ export default function TennisAdminDashboard() {
                         </h2>
 
                         <ol className="space-y-2">
-                            {dashboard.topRankingPlayers.map((p) => (
+                            {dashboard.topRankingPlayers.map((p, idx) => (
                                 <li
                                     key={p._id}
                                     className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                                 >
                                     <div>
                                         <p className="font-medium text-[#1E2A4A]">
-                                            #{p.ranking} {p.name}
+                                            #{idx + 1} {p.name}
                                         </p>
                                         <p className="text-sm text-gray-500">
                                             {p.country}
