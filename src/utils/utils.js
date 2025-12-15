@@ -57,6 +57,19 @@ export const phoneToIso = {
     224: "gn",    // Guinea
     225: "ci",    // Ivory Coast
     226: "bf",    // Burkina Faso
+    381: 'rs',
+    216: 'tn', // Tunisia
+    972: 'il', // Israel
+    380: 'ua', // Ukraine
+    375: 'by', // Belarus
+    371: 'lv', // Latvia
+    372: 'ee', // Estonia
+    370: 'lt', // Lithuania
+    421: 'sk', // Slovakia
+    386: 'si', // Slovenia
+    358: 'fi', // Finland
+    420: 'cz', // Czech Republic
+    385: 'hr', // Croatia
 };
 
 export const getCountryCode = (phoneCode) => {
