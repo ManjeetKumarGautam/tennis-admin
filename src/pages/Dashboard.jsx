@@ -8,6 +8,8 @@ import {
     Trophy
 } from "lucide-react";
 import { motion } from "framer-motion";
+import FlagIcon from "../components/FlagIcon";
+import { getCountryCode } from "../utils/utils";
 
 /* =============================
    STAT CARD
@@ -182,16 +184,46 @@ export default function TennisAdminDashboard() {
                                 {dashboard.upcomingMatches.map((u) => (
                                     <li
                                         key={u._id}
-                                        className="p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition"
+                                        className="p-3 px-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition"
                                     >
-                                        <p className="font-medium text-[#1E2A4A]">
-                                            {u.playerA.name} vs {u.playerB.name}
-                                        </p>
-                                        <p className="text-sm text-gray-500">
-                                            {new Date(u.matchDateTime).toLocaleString()} •{" "}
-                                            {u.matchInfo?.tournament}
-                                        </p>
+                                        <div className="flex items-center justify-between">
+                                            {/* Left - Player A */}
+                                            <div className="w-1/3 text-left">
+                                                {/* <FlagIcon
+                                                    code={getCountryCode(u.playerA.country_code)}
+                                                    className="w-16 h-10"
+                                                /> */}
+                                                <p className="font-medium text-[#1E2A4A]">
+                                                    {u.playerA.name}
+                                                </p>
+                                            </div>
+
+                                            {/* Center - Match Details */}
+                                            <div className="w-1/3 text-center">
+                                                <p className="text-sm font-semibold text-[#1E2A4A]">
+                                                    VS
+                                                </p>
+                                                <p className="text-xs text-gray-500">
+                                                    {new Date(u.matchDateTime).toLocaleString()}
+                                                </p>
+                                                <p className="text-xs text-gray-500">
+                                                    {u.matchInfo?.tournament}
+                                                </p>
+                                            </div>
+
+                                            {/* Right - Player B */}
+                                            <div className="w-1/3 text-right">
+                                                {/* <FlagIcon
+                                                    code={getCountryCode(u.playerA.country_code)}
+                                                    className="w-16 h-10"
+                                                /> */}
+                                                <p className="font-medium text-[#1E2A4A]">
+                                                    {u.playerB.name}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </li>
+
                                 ))}
                             </ul>
                         )}
@@ -239,13 +271,33 @@ export default function TennisAdminDashboard() {
                                     key={r.matchId}
                                     className="p-3 bg-gray-50 rounded-lg"
                                 >
-                                    <p className="font-medium text-[#1E2A4A]">
-                                        {r.winner} def. {r.loser}
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        {r.setScore?.playerA} : {r.setScore?.playerB}
-                                    </p>
+                                    <div className="flex items-center justify-between">
+                                        {/* Left - Winner */}
+                                        <div className="w-1/3 text-left">
+                                            <p className="font-medium text-[#1E2A4A]">
+                                                {r.winner}
+                                            </p>
+                                        </div>
+
+                                        {/* Center - Result Details */}
+                                        <div className="w-1/3 text-center">
+                                            <p className="text-xs text-gray-500">
+                                                def.
+                                            </p>
+                                            <p className=" text-sm font-semibold text-[#1E2A4A]">
+                                                {r.setScore?.playerA} : {r.setScore?.playerB}
+                                            </p>
+                                        </div>
+
+                                        {/* Right - Loser */}
+                                        <div className="w-1/3 text-right">
+                                            <p className="font-medium text-[#1E2A4A]">
+                                                {r.loser}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </li>
+
                             ))}
                         </ul>
                     </div>
